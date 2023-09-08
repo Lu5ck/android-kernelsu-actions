@@ -17,6 +17,9 @@ inputs:
   image:
     description: Kernel image name
     required: true
+  kernelsu:
+    description: Kernelsu to name
+    required: true
 outputs:
   outfile:
     description: Zip file generated from build
@@ -28,3 +31,4 @@ runs:
     - ${{ inputs.compiler }}
     - ${{ inputs.defconfig }}
     - ${{ inputs.image }}
+    - ${{ inputs.kernelsu }}

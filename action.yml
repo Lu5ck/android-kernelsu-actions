@@ -17,8 +17,8 @@ inputs:
   image:
     description: Kernel image name
     required: true
-  kernelsu:
-    description: Kernelsu to name
+  usekprobe:
+    description: Use kprobe
     required: true
 outputs:
   outfile:
@@ -31,4 +31,4 @@ runs:
     - ${{ inputs.compiler }}
     - ${{ inputs.defconfig }}
     - ${{ inputs.image }}
-    - ${{ inputs.kernelsu }}
+    - ${{ inputs.usekprobe }}

@@ -26,6 +26,7 @@ arch="$1"
 compiler="$2"
 defconfig="$3"
 image="$4"
+kernelsu="$5"
 repo_name="${GITHUB_REPOSITORY/*\/}"
 zipper_path="${ZIPPER_PATH:-zipper}"
 kernel_path="${KERNEL_PATH:-.}"
@@ -197,6 +198,12 @@ else
 fi
 
 cd "$workdir"/"$kernel_path" || exit 127
+
+msg "Installing KernelSU..."
+if ! curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -; then
+    err "Failed downloading kernelsu"
+fi
+
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"
 tag="$(git branch | sed 's/*\ //g')"

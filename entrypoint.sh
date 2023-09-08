@@ -204,7 +204,7 @@ if ! curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/set
     err "Failed downloading kernelsu"
 fi
 
-if $usekprobe == "yes"; then
+if [ $usekprobe == "yes" ]; then
     echo "CONFIG_KPROBES=y" >> "$workdir"/"arch"/"${arch}"/configs/"${defconfig}"
     echo "CONFIG_HAVE_KPROBES=y" >> "$workdir"/"arch"/"${arch}"/configs/"${defconfig}"
     echo "CONFIG_KPROBE_EVENTS=y" >> "$workdir"/"arch"/"${arch}"/configs/"${defconfig}"

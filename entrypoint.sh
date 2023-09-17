@@ -222,6 +222,7 @@ if ! make O=out $arch_opts $make_opts $host_make_opts "$defconfig"; then
     err "Failed generating .config, make sure it is actually available in arch/${arch}/configs/ and is a valid defconfig file"
     exit 2
 fi
+apt list --installed
 msg "Begin building kernel..."
 
 make O=out $arch_opts $make_opts $host_make_opts -j"$(nproc --all)" prepare

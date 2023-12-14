@@ -217,7 +217,7 @@ if [ $usekprobe == "yes" ]; then
 fi
 
 ls
-cat "$workdir"/KernelSU/Kernel/core_hook.c
+cat "$workdir"/KernelSU/kernel/core_hook.c
 
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"

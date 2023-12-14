@@ -34,6 +34,7 @@ name="${NAME:-$repo_name}"
 python_version="${PYTHON_VERSION:-3}"
 
 free
+df -h
 
 msg "Updating container..."
 apt update && apt upgrade -y

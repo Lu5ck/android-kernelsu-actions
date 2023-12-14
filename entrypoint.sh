@@ -33,6 +33,8 @@ kernel_path="${KERNEL_PATH:-.}"
 name="${NAME:-$repo_name}"
 python_version="${PYTHON_VERSION:-3}"
 
+free
+
 msg "Updating container..."
 apt update && apt upgrade -y
 apt list --installed

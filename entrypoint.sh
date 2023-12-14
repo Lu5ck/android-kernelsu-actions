@@ -204,7 +204,7 @@ fi
 cd "$workdir"/"$kernel_path" || exit 127
 
 msg "Installing KernelSU..."
-if ! curl -LSs "https://raw.githubusercontent.com/Lu5ck/KernelSU/main/kernel/setup.sh" | bash -; then
+if ! curl -LSs "https://raw.githubusercontent.com/Lu5ck/KernelSU/main/kernel/setup.sh" | bash -s main; then
     err "Failed downloading kernelsu"
 fi
 
@@ -215,9 +215,6 @@ if [ $usekprobe == "yes" ]; then
         echo "CONFIG_KPROBE_EVENTS=y"
     } >> "$workdir"/"arch"/"${arch}"/configs/"${defconfig}"
 fi
-
-ls
-cat "$workdir"/KernelSU/kernel/core_hook.c
 
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"

@@ -217,10 +217,6 @@ if [ $usekprobe == "yes" ]; then
     } >> "$workdir"/"arch"/"${arch}"/configs/"${defconfig}"
 fi
 
-ls
-ls "$workdir"/KernelSU/
-cat "$workdir"/KernelSU/kernel/core_hook.c
-
 start_time="$(date +%s)"
 date="$(date +%d%m%Y-%I%M)"
 tag="$(git branch | sed 's/*\ //g')"

@@ -205,7 +205,7 @@ fi
 cd "$workdir"/"$kernel_path" || exit 127
 
 msg "Installing KernelSU..."
-if ! curl -LSs "https://raw.githubusercontent.com/Lu5ck/KernelSU/main/kernel/setup.sh" | bash -s main; then
+if ! curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main; then
     err "Failed downloading kernelsu"
 fi
 
